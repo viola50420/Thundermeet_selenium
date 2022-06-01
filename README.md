@@ -5,11 +5,11 @@ Thundermeet 是針對有相約時間需求的用戶，我們提供 Google 行事
 因為像是註冊、填寫event、修改event等行為是不能被重複的，所以我們有些selenium code 是不能被重複的執行的，例如註冊流程如果被執行第二遍就會報錯，該使用者已存在，所以如果要執行多次的話可能需要在有"send_keys"的地方將傳入的資料修改一下再執行。
 
 ## Getting Started
-1.clone this repository
-git clone https://github.com/viola50420/thunderMeet_pytest
-2.Open your terminal and run `pip instsall selenium`
-3.`cd` to this repository
-4.if selenium is successfully installed, than run `python -i 'testcase'.py`
+1.clone this repository<br>
+git clone https://github.com/viola50420/thunderMeet_pytest<br>
+2.Open your terminal and run `pip instsall selenium`<br>
+3.`cd` to this repository<br>
+4.if selenium is successfully installed, than run `python -i 'testcase'.py`<br>
 
 ## tested Features
 ### signup
