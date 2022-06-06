@@ -37,7 +37,7 @@ class TestEditevent():
     self.driver.find_element(By.CSS_SELECTOR, ".confirmbutton > span").click()
     self.driver.find_element(By.CSS_SELECTOR, ".container > .ant-btn > span:nth-child(2)").click()
     self.driver.close()
-  
+
 actor = TestEditevent()
 actor.setup_method("foo")
 actor.test_editevent()
