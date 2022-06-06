@@ -19,38 +19,64 @@ class TestUntitled():
     self.driver.quit()
   
   def test_untitled(self):
-    self.driver.get("https://thundermeet.netlify.app/")
-    self.driver.find_element(By.ID, "login_userId").click()
-    self.driver.find_element(By.ID, "login_userId").send_keys("1234")
-    self.driver.find_element(By.ID, "login_password").click()
-    self.driver.find_element(By.ID, "login_password").send_keys("1234")
+    
+    self.driver.get("https://thundermeet.netlify.app")
+    Userid = ('1234')
+    UserPass= ('1234')
+    
 
-    self.driver.find_element(By.CSS_SELECTOR, ".ant-btn:nth-child(1) > span").click()
+    self.driver.execute_script("document.body.style.zoom='75%'")
+    self.driver.set_window_size(1920, 1200)
+    time.sleep(1)
+    self.driver.find_element_by_id('login_userId').send_keys(Userid)
+    self.driver.find_element_by_id('login_password').send_keys(UserPass)
 
+    time.sleep(2)
+    self.driver.find_element_by_id('login_password').send_keys(Keys.ENTER)
 
-    self.driver.find_element(By.CSS_SELECTOR, "span:nth-child(2)").click()
+    time.sleep(3)
+    self.driver.find_element_by_xpath('//*[@id="root"]/nav/div[1]/button/span[2]').click()
+    time.sleep(5)
     self.driver.find_element(By.ID, "eventName").click()
     self.driver.find_element(By.ID, "eventName").send_keys("event")
-
-
-    # self.driver.find_element(By.CSS_SELECTOR, ".ant-btn > span:nth-child(2)").click()
-    # element = self.driver.find_element(By.CSS_SELECTOR, ".ant-btn > span:nth-child(2)")
-    # actions = ActionChains(self.driver)
-    # actions.move_to_element(element).perform()
-    # self.driver.find_element(By.ID, "eventName").click()
-    # self.driver.find_element(By.ID, "eventName").send_keys("event")
     self.driver.find_element(By.CSS_SELECTOR, ".ant-picker-input-active > input").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".ant-picker-cell-today > .ant-picker-cell-inner").click()
-    self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(5) > .ant-picker-cell-range-hover-end > .ant-picker-cell-inner").click()
+    time.sleep(1)
+
+    self.driver.find_element(By.XPATH, '/html/body/div[3]/div/div/div/div[2]/div/div[1]/div/div[2]/table/tbody/tr[5]/td[1]/div').click()
+    time.sleep(1)
+    self.driver.find_element(By.XPATH, "/html/body/div[3]/div/div/div/div[2]/div/div[1]/div/div[2]/table/tbody/tr[5]/td[3]/div").click()
+    time.sleep(1)
     self.driver.find_element(By.CSS_SELECTOR, ".ant-btn-primary > span").click()
-    element = self.driver.find_element(By.CSS_SELECTOR, ".ant-btn-primary > span")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element).perform()
-    element = self.driver.find_element(By.CSS_SELECTOR, "body")
-    actions = ActionChains(self.driver)
-    actions.move_to_element(element, 0, 0).perform()
+    time.sleep(1)
     self.driver.find_element(By.CSS_SELECTOR, ".gotit-button > span").click()
-  
+    time.sleep(3)
+
+    self.driver.find_element(By.XPATH ,'//*[@id="root"]/div/span/button[1]/span[2]').click()
+    time.sleep(3)
+    self.driverser.find_element(By.XPATH ,'/html/body/div[3]/div/div[2]/div/div[2]/div[1]/div/div[3]/img').click()
+    time.sleep(3)
+    self.driver.find_element(By.XPATH ,'/html/body/div[4]/div/div[2]/div/div[2]/div[1]/div/div[1]/p[3]').click()
+
+    time.sleep(1)
+    self.driver.find_element(By.XPATH ,'/html/body/div[4]/div/div[2]/div/div[2]/div[1]/div/div[1]/p[2]').click()
+    time.sleep(1)
+
+    self.driver.find_element(By.XPATH ,'/html/body/div[4]/div/div[2]/div/div[2]/div[2]/button[2]/span').click()
+    time.sleep(3)
+    self.driver.find_element(By.XPATH ,'//*[@id="root"]/div/div[2]/button').click()
+    time.sleep(2)
+    self.driver.find_element(By.XPATH ,'//*[@id="root"]/div/span/button[1]/span[2]').click()
+    time.sleep(1)
+
+    self.driver.find_element(By.XPATH ,'/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div/div[2]/div/div/div/div').click()
+    self.driver.find_element(By.XPATH ,'/html/body/div[4]/div/div/div/div[2]/div[1]/div/div/div[1]/div').click()
+    self.driver.find_element(By.XPATH ,'/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[2]/span').click()
+    # time.sleep(1)
+    # Browser.find_element(By.XPATH ,'/html/body/div[4]/div/div/ul/li[1]').click()
+    # time.sleep(1)
+    # Browser.find_element(By.XPATH ,'//*[@id="root"]/div/div/div[3]/div[2]/button[2]').click()
+
+
   def save_html(self, fn = "signup_test_output1.html"):
     self.html = self.driver.execute_script("return document.body.innerHTML")
     with open(fn, 'w', encoding = 'utf-8') as fh:
