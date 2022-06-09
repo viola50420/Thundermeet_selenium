@@ -9,6 +9,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class TestEditevent():
   def setup_method(self, method):
@@ -27,7 +30,7 @@ class TestEditevent():
     self.driver.find_element(By.ID, "login_password").send_keys("1234")
     self.driver.find_element(By.CSS_SELECTOR, ".ant-btn:nth-child(1) > span").click()
 
-    self.driver.implicitly_wait(10)
+    self.driver.implicitly_wait(20)
     self.driver.find_element(By.CSS_SELECTOR, ".ant-btn-primary:nth-child(2)").click()
     self.driver.execute_script("window.scrollTo(0,0)")
     self.driver.find_element(By.CSS_SELECTOR, ".ant-btn-primary:nth-child(2)").click()
